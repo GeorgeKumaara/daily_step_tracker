@@ -59,7 +59,9 @@ head(transformed_table)
 
 exercise_graph <- ggplot(transformed_table, aes(fill = Exercise_Type, y = Minutes, x = Day))+ 
   geom_bar(position = "stack", stat = "identity")+
-  scale_fill_discrete(labels = c("Intense exercise", "Moderate Exercise"), name = "Exercise type") # This creates a daily exercise report. 
+  scale_fill_discrete(labels = c("Intense exercise", "Moderate Exercise"), name = "Exercise type")+
+theme(axis.text.x = element_blank(),
+  axis.ticks.x = element_blank()) # This creates a daily exercise report. 
 
 exercise_graph
 
